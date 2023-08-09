@@ -1,0 +1,32 @@
+<div class="card mt-3">
+  <div class="px-4 pt-4">
+    <img
+      class="card-img-top rounded-circle"
+      [src]="theUser.image"
+      alt="Image"
+    />
+    <p class="text-center mt-3">
+      {{ theUser.first_name }} {{ theUser.last_name }}
+    </p>
+  </div>
+  <div class="row text-center px-4 py-2">
+    <div class="col-4">
+      <button class="btn-icon">
+        <img src="assets/img/search2.svg" alt="" />
+      </button>
+      <p class="text-center">Ver Detalle</p>
+    </div>
+    <div class="col-4">
+      <button class="btn-icon">
+        <img src="assets/img/refresh2.svg" alt="" />
+      </button>
+      <p class="text-center">Actualizar</p>
+    </div>
+    <div class="col-4">
+      <button class="btn-icon">
+        <img src="assets/img/delete.svg" alt="" />
+      </button>
+      <p class="text-center">Borrar</p>
+    </div>
+  </div>
+</div>

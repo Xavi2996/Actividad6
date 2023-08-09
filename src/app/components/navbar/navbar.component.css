@@ -1,0 +1,12 @@
+.lin-bottom{
+  border-bottom: solid 2px rgba(0, 0, 0, 0.247);
+}
+
+.navbar-nav .nav-link.active {
+  color: rgb(219, 55, 110);
+}
+
+.container-app{
+  width: 90% ;
+  margin: 0 auto;
+}
