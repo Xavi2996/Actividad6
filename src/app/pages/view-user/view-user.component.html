@@ -1,1 +1,25 @@
-<p>view-user works!</p>
+<div class="container mt-5">
+  <section>
+    <div class="row">
+      <div class="col-md-6 text-center">
+        <img class="rounded-circle" [src]="oneUser.image" alt="Image_User" />
+      </div>
+      <div class="col-md-6">
+        <div class="text-left">
+          <p>{{ oneUser.first_name }}</p>
+          <p>{{ oneUser.last_name }}</p>
+          <p><strong>Nombre de Usuario: </strong> {{ oneUser.username }}</p>
+          <p><strong>email: </strong>{{ oneUser.email }}</p>
+        </div>
+
+        <div class="text-center">
+          <div class="row text-center">
+            <button class="col-md-3 btn btn-danger">Eliminar</button>
+            <button class="col-md-3 btn btn-warning">Actualizar</button>
+            <button class="col-md-3 btn btn-success">Volver al Listado</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

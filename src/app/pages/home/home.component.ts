@@ -7,6 +7,8 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
+  public page!: number;
+
   arrData!: any;
   arrUsers!: any;
 

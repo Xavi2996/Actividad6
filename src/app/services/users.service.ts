@@ -1,6 +1,7 @@
 import { Inject, Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { User } from '../interfaces/user';
 @Injectable({
   providedIn: 'root',
 })
@@ -11,5 +12,9 @@ export class UsersService {
 
   getAll(): Observable<any> {
     return this.httpclient.get<any>(this.url);
+  }
+
+  getUserById(id: string): Observable<User> {
+    return this.httpclient.get<User>(`${this.url}${id}`);
   }
 }

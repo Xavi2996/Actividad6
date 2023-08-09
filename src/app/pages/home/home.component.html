@@ -1,10 +1,20 @@
-<section class="container-app">
+<section class="container-app mt-5">
   <div class="row g-3">
     <article
       class="col-12 col-md-6 col-lg-4 col-xl-3"
-      *ngFor="let user of arrUsers"
+      *ngFor="
+        let user of arrUsers | paginate : { itemsPerPage: 6, currentPage: page }
+      "
     >
       <app-user-card [theUser]="user"> </app-user-card>
     </article>
   </div>
 </section>
+
+<div class="text-center mt-4">
+  <pagination-controls
+    previousLabel=""
+    nextLabel=""
+    (pageChange)="page = $event"
+  ></pagination-controls>
+</div>
