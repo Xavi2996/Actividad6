@@ -17,15 +17,15 @@
       <p class="text-center">Ver Detalle</p>
     </div>
     <div class="col-4">
-      <button class="btn-icon">
+      <a class="btn-icon">
         <img src="assets/img/refresh2.svg" alt="" />
-      </button>
+      </a>
       <p class="text-center">Actualizar</p>
     </div>
     <div class="col-4">
-      <button class="btn-icon">
+      <a class="btn-icon" [routerLink]="['/home', theUser?._id]">
         <img src="assets/img/delete.svg" alt="" />
-      </button>
+      </a>
       <p class="text-center">Borrar</p>
     </div>
   </div>

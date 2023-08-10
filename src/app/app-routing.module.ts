@@ -7,6 +7,7 @@ import { ViewUserComponent } from './pages/view-user/view-user.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
+  { path: 'home/:id', component: HomeComponent },
   { path: 'newuser', component: FormComponent },
   { path: 'updateuser/:id', component: FormComponent },
   { path: 'viewuser/:id', component: ViewUserComponent },

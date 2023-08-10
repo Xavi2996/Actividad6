@@ -1,0 +1,15 @@
+.borde-img{
+  border-right: solid 2px black;
+}
+
+@media screen and (max-width:576px) {
+  .borde-img{
+    border: none;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .borde-img{
+    border: none;
+  }
+}

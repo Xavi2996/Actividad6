@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <section>
     <div class="row">
-      <div class="col-md-6 text-center">
+      <div class="col-md-6 text-center borde-img">
         <img class="rounded-circle" [src]="oneUser.image" alt="Image_User" />
       </div>
       <div class="col-md-6">
@@ -16,7 +16,9 @@
           <div class="row text-center">
             <button class="col-md-3 btn btn-danger">Eliminar</button>
             <button class="col-md-3 btn btn-warning">Actualizar</button>
-            <button class="col-md-3 btn btn-success">Volver al Listado</button>
+            <button class="col-md-3 btn btn-success" [routerLink]="['/home']">
+              Volver al Listado
+            </button>
           </div>
         </div>
       </div>

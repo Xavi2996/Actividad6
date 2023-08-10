@@ -10,6 +10,7 @@ import { FormComponent } from './components/form/form.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     AppRoutingModule,
     NgxPaginationModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
