@@ -21,4 +21,12 @@ export class UsersService {
   deleteUser(id: string): Observable<User> {
     return this.httpclient.delete<User>(`${this.url}${id}`);
   }
+
+  update(formValue: User): Observable<User> {
+    return this.httpclient.put<User>(`${this.url}${formValue.id}`, formValue);
+  }
+
+  createUser(formValue: User): Observable<User> {
+    return this.httpclient.post<User>(this.url, formValue);
+  }
 }

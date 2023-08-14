@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { User } from 'src/app/interfaces/user';
 import { UsersService } from 'src/app/services/users.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +15,8 @@ export class HomeComponent {
 
   arrData!: any;
   arrUsers!: any;
+  arrUserFind!: any;
+  namaUser!: string;
 
   //inyección de servicio
   usersService = inject(UsersService);
@@ -21,14 +25,6 @@ export class HomeComponent {
 
   ngOnInit(): void {
     this.obtenerUsuarios();
-    this.activeRoute.params.subscribe((params) => {
-      this.id = params['id'];
-      console.log(this.id);
-
-      if (this.id != undefined) {
-        this.deleteUser();
-      }
-    });
   }
 
   //Obtener Todos lo usuarios
@@ -38,16 +34,61 @@ export class HomeComponent {
       this.arrUsers = data.results;
       console.log(this.arrData);
       console.log(this.arrUsers);
+      this.activeRoute.params.subscribe((params) => {
+        this.id = params['id'];
+        if (this.id != undefined) {
+          this.deleteUser(this.id);
+        }
+      });
     });
   }
 
-  deleteUser() {
-    this.usersService.deleteUser(this.id).subscribe((data) => {
-      if (data) {
-        console.log(data);
+  deleteUser(id: string) {
+    this.arrUserFind = this.arrUsers.filter((el: any) => el._id === id);
+    this.namaUser = this.arrUserFind[0].first_name;
 
-        console.log('hola');
-      }
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success mx-3',
+        cancelButton: 'btn btn-danger',
+      },
+      buttonsStyling: false,
     });
+
+    swalWithBootstrapButtons
+      .fire({
+        title: `Deseas eliminar al usuario ${this.namaUser}`,
+        text: 'Para confirmar presione en aceptar',
+        showCancelButton: true,
+        allowOutsideClick: false,
+        showCloseButton: true,
+        confirmButtonText: 'Aceptar',
+        cancelButtonText: 'Cancelar',
+        reverseButtons: false,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          this.usersService.deleteUser(this.id).subscribe((data) => {
+            if (data) {
+              swalWithBootstrapButtons.fire(
+                'Usuario Eliminado!',
+                ` ${this.namaUser} borrado correctamente.`,
+                'success'
+              );
+            }
+            this.router.navigate(['/home']);
+          });
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire(
+            'Acción cancelada',
+            `${this.namaUser} no a sido borrada.`,
+            'error'
+          );
+        }
+        this.router.navigate(['/home']);
+      });
   }
 }

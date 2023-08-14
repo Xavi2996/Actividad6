@@ -11,6 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     NgxPaginationModule,
     ReactiveFormsModule,
+    SweetAlert2Module,
+    SweetAlert2Module.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
