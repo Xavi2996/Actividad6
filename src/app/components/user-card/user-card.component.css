@@ -8,3 +8,10 @@
   height: 30px;
   opacity: 0.5;
 }
+
+.btn-icon:hover img{
+  background-color: tomato;
+  opacity: 0.5;
+  border-radius: 10px;
+
+}
