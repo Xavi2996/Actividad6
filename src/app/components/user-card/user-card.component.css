@@ -3,15 +3,62 @@
   border: none;
 }
 
+.cont-btnicons{
+  display: flex;
+  justify-content: space-around;
+}
 .btn-icon img{
   width: 30px;
   height: 30px;
   opacity: 0.5;
+  margin-bottom: 10px;
 }
 
 .btn-icon:hover img{
   background-color: tomato;
   opacity: 0.5;
   border-radius: 10px;
+}
 
+p{
+  font-size: 14px;
+  font-weight: 400;
+}
+
+p.text-name{
+  font-size: 16px;
+  font-style: italic;
+}
+
+@media screen and (max-width: 768px) {
+  .image-user{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .cont-btnicons{
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .cont-btnicons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .image-user{
+    width: 100%;
+
+  }
+  /* .icon-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  } */
 }

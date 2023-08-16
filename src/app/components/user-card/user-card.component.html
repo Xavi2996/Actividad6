@@ -1,28 +1,28 @@
 <div class="card">
   <div class="px-4 pt-4">
     <img
-      class="card-img-top rounded-circle"
+      class="card-img-top rounded-circle image-user"
       [src]="theUser.image"
       alt="Image"
     />
-    <p class="text-center mt-3">
+    <p class="text-center mt-3 text-name">
       {{ theUser.first_name }} {{ theUser.last_name }}
     </p>
   </div>
-  <div class="row text-center px-4 py-2">
-    <div class="col-4">
+  <div class="cont-btnicons text-center px-4 py-2">
+    <div class="icon-info">
       <a class="btn-icon" [routerLink]="['/viewuser', theUser?._id]">
-        <img src="assets/img/search2.svg" alt="" />
+        <img src="assets/img/search2.svg" alt="icon-info" />
       </a>
       <p class="text-center">Ver Detalle</p>
     </div>
-    <div class="col-4">
+    <div class="icon-info">
       <a class="btn-icon" [routerLink]="['/updateuser', theUser?._id]">
         <img src="assets/img/refresh2.svg" alt="" />
       </a>
       <p class="text-center">Actualizar</p>
     </div>
-    <div class="col-4">
+    <div class="icon-info">
       <a class="btn-icon" [routerLink]="['/home', theUser?._id]">
         <img src="assets/img/delete.svg" alt="" />
       </a>

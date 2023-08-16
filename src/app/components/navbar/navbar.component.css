@@ -10,3 +10,17 @@
   width: 90% ;
   margin: 0 auto;
 }
+
+a {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav-hover:hover {
+  border-bottom: solid 1px;
+
+}
+
+
+
+

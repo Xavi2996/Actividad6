@@ -10,3 +10,11 @@ input.ng-valid.ng-touched{
   color: tomato;
   font-size: 12px;
 }
+
+input::placeholder{
+  font-size: 13px;
+}
+
+input{
+  font-size: 14px;
+}

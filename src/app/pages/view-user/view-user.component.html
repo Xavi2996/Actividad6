@@ -6,10 +6,12 @@
       </div>
       <div class="col-md-6 container-info">
         <div class="user-info">
-          <p>{{ oneUser.first_name }}</p>
-          <p>{{ oneUser.last_name }}</p>
-          <p><strong>Nombre de Usuario: </strong> {{ oneUser.username }}</p>
-          <p><strong>email: </strong>{{ oneUser.email }}</p>
+          <p class="names-user">{{ oneUser.first_name }}</p>
+          <p class="names-user">{{ oneUser.last_name }}</p>
+          <p class="info-user">
+            <strong>Nombre de Usuario: </strong> {{ oneUser.username }}
+          </p>
+          <p class="info-user"><strong>email: </strong>{{ oneUser.email }}</p>
         </div>
 
         <div class="">
